@@ -5,8 +5,12 @@
       <paths name="Remote Host(Frios) (f77782dc-f4f0-428b-a92f-ffdc34914d31)">
         <serverdata>
           <mappings>
-            <mapping local="$PROJECT_DIR$" web="/" />
+            <mapping deploy="/tmp/tmp.4D4gjn5ZR3" local="$PROJECT_DIR$" />
           </mappings>
+          <excludedPaths>
+            <excludedPath local="true" path="$PROJECT_DIR$/cmake-build-debug-remote-hostfrios" />
+            <excludedPath local="true" path="$PROJECT_DIR$/cmake-build-debug_win" />
+          </excludedPaths>
         </serverdata>
       </paths>
     </serverData>
