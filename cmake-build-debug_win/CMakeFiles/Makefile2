@@ -70,12 +70,12 @@ clean: CMakeFiles\POSGameOfLifeClient.dir\clean
 CMakeFiles\POSGameOfLifeClient.dir\all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\POSGameOfLifeClient.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\POSGameOfLifeClient.dir\depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\POSGameOfLifeClient.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\POSGameOfLifeClient.dir\build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="D:\Luki\Domace vyucovanie\FRI UNIZA\Bc\3. Rocnik\zimny\POS\Semestralna praca\POSGameOfLifeClient\cmake-build-debug_win\CMakeFiles" --progress-num=1,2,3 "Built target POSGameOfLifeClient"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="D:\Luki\Domace vyucovanie\FRI UNIZA\Bc\3. Rocnik\zimny\POS\Semestralna praca\POSGameOfLifeClient\cmake-build-debug_win\CMakeFiles" --progress-num=1,2,3,4,5,6 "Built target POSGameOfLifeClient"
 .PHONY : CMakeFiles\POSGameOfLifeClient.dir\all
 
 # Build rule for subdir invocation for target.
 CMakeFiles\POSGameOfLifeClient.dir\rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "D:\Luki\Domace vyucovanie\FRI UNIZA\Bc\3. Rocnik\zimny\POS\Semestralna praca\POSGameOfLifeClient\cmake-build-debug_win\CMakeFiles" 3
+	$(CMAKE_COMMAND) -E cmake_progress_start "D:\Luki\Domace vyucovanie\FRI UNIZA\Bc\3. Rocnik\zimny\POS\Semestralna praca\POSGameOfLifeClient\cmake-build-debug_win\CMakeFiles" 6
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) CMakeFiles\POSGameOfLifeClient.dir\all
 	$(CMAKE_COMMAND) -E cmake_progress_start "D:\Luki\Domace vyucovanie\FRI UNIZA\Bc\3. Rocnik\zimny\POS\Semestralna praca\POSGameOfLifeClient\cmake-build-debug_win\CMakeFiles" 0
 .PHONY : CMakeFiles\POSGameOfLifeClient.dir\rule

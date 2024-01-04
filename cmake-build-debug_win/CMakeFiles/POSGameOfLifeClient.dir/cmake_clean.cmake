@@ -1,6 +1,12 @@
 file(REMOVE_RECURSE
   "CMakeFiles/POSGameOfLifeClient.dir/main.cpp.obj"
   "CMakeFiles/POSGameOfLifeClient.dir/main.cpp.obj.d"
+  "CMakeFiles/POSGameOfLifeClient.dir/source_files/ConsoleGui.cpp.obj"
+  "CMakeFiles/POSGameOfLifeClient.dir/source_files/ConsoleGui.cpp.obj.d"
+  "CMakeFiles/POSGameOfLifeClient.dir/source_files/FormerWorlds.cpp.obj"
+  "CMakeFiles/POSGameOfLifeClient.dir/source_files/FormerWorlds.cpp.obj.d"
+  "CMakeFiles/POSGameOfLifeClient.dir/source_files/GameState.cpp.obj"
+  "CMakeFiles/POSGameOfLifeClient.dir/source_files/GameState.cpp.obj.d"
   "CMakeFiles/POSGameOfLifeClient.dir/source_files/my_socket.cpp.obj"
   "CMakeFiles/POSGameOfLifeClient.dir/source_files/my_socket.cpp.obj.d"
   "POSGameOfLifeClient.exe"

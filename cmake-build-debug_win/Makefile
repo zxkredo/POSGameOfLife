@@ -142,6 +142,78 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\POSGameOfLifeClient.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\POSGameOfLifeClient.dir\main.cpp.s
 .PHONY : main.cpp.s
 
+source_files\ConsoleGui.obj: source_files\ConsoleGui.cpp.obj
+.PHONY : source_files\ConsoleGui.obj
+
+# target to build an object file
+source_files\ConsoleGui.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\POSGameOfLifeClient.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\POSGameOfLifeClient.dir\source_files\ConsoleGui.cpp.obj
+.PHONY : source_files\ConsoleGui.cpp.obj
+
+source_files\ConsoleGui.i: source_files\ConsoleGui.cpp.i
+.PHONY : source_files\ConsoleGui.i
+
+# target to preprocess a source file
+source_files\ConsoleGui.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\POSGameOfLifeClient.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\POSGameOfLifeClient.dir\source_files\ConsoleGui.cpp.i
+.PHONY : source_files\ConsoleGui.cpp.i
+
+source_files\ConsoleGui.s: source_files\ConsoleGui.cpp.s
+.PHONY : source_files\ConsoleGui.s
+
+# target to generate assembly for a file
+source_files\ConsoleGui.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\POSGameOfLifeClient.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\POSGameOfLifeClient.dir\source_files\ConsoleGui.cpp.s
+.PHONY : source_files\ConsoleGui.cpp.s
+
+source_files\FormerWorlds.obj: source_files\FormerWorlds.cpp.obj
+.PHONY : source_files\FormerWorlds.obj
+
+# target to build an object file
+source_files\FormerWorlds.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\POSGameOfLifeClient.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\POSGameOfLifeClient.dir\source_files\FormerWorlds.cpp.obj
+.PHONY : source_files\FormerWorlds.cpp.obj
+
+source_files\FormerWorlds.i: source_files\FormerWorlds.cpp.i
+.PHONY : source_files\FormerWorlds.i
+
+# target to preprocess a source file
+source_files\FormerWorlds.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\POSGameOfLifeClient.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\POSGameOfLifeClient.dir\source_files\FormerWorlds.cpp.i
+.PHONY : source_files\FormerWorlds.cpp.i
+
+source_files\FormerWorlds.s: source_files\FormerWorlds.cpp.s
+.PHONY : source_files\FormerWorlds.s
+
+# target to generate assembly for a file
+source_files\FormerWorlds.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\POSGameOfLifeClient.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\POSGameOfLifeClient.dir\source_files\FormerWorlds.cpp.s
+.PHONY : source_files\FormerWorlds.cpp.s
+
+source_files\GameState.obj: source_files\GameState.cpp.obj
+.PHONY : source_files\GameState.obj
+
+# target to build an object file
+source_files\GameState.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\POSGameOfLifeClient.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\POSGameOfLifeClient.dir\source_files\GameState.cpp.obj
+.PHONY : source_files\GameState.cpp.obj
+
+source_files\GameState.i: source_files\GameState.cpp.i
+.PHONY : source_files\GameState.i
+
+# target to preprocess a source file
+source_files\GameState.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\POSGameOfLifeClient.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\POSGameOfLifeClient.dir\source_files\GameState.cpp.i
+.PHONY : source_files\GameState.cpp.i
+
+source_files\GameState.s: source_files\GameState.cpp.s
+.PHONY : source_files\GameState.s
+
+# target to generate assembly for a file
+source_files\GameState.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\POSGameOfLifeClient.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\POSGameOfLifeClient.dir\source_files\GameState.cpp.s
+.PHONY : source_files\GameState.cpp.s
+
 source_files\my_socket.obj: source_files\my_socket.cpp.obj
 .PHONY : source_files\my_socket.obj
 
@@ -178,6 +250,15 @@ help:
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
+	@echo ... source_files/ConsoleGui.obj
+	@echo ... source_files/ConsoleGui.i
+	@echo ... source_files/ConsoleGui.s
+	@echo ... source_files/FormerWorlds.obj
+	@echo ... source_files/FormerWorlds.i
+	@echo ... source_files/FormerWorlds.s
+	@echo ... source_files/GameState.obj
+	@echo ... source_files/GameState.i
+	@echo ... source_files/GameState.s
 	@echo ... source_files/my_socket.obj
 	@echo ... source_files/my_socket.i
 	@echo ... source_files/my_socket.s

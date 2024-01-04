@@ -86,7 +86,25 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="D:/Luki/Domace vyucovanie/FRI UNIZA/Bc/3. Rocnik/zimny/POS/Semestralna praca/POSGameOfLifeClient/headers/ConsoleGui.h">
+			<Option target="POSGameOfLifeClient"/>
+		</Unit>
+		<Unit filename="D:/Luki/Domace vyucovanie/FRI UNIZA/Bc/3. Rocnik/zimny/POS/Semestralna praca/POSGameOfLifeClient/headers/FormerWorlds.h">
+			<Option target="POSGameOfLifeClient"/>
+		</Unit>
+		<Unit filename="D:/Luki/Domace vyucovanie/FRI UNIZA/Bc/3. Rocnik/zimny/POS/Semestralna praca/POSGameOfLifeClient/headers/GameState.h">
+			<Option target="POSGameOfLifeClient"/>
+		</Unit>
 		<Unit filename="D:/Luki/Domace vyucovanie/FRI UNIZA/Bc/3. Rocnik/zimny/POS/Semestralna praca/POSGameOfLifeClient/main.cpp">
+			<Option target="POSGameOfLifeClient"/>
+		</Unit>
+		<Unit filename="D:/Luki/Domace vyucovanie/FRI UNIZA/Bc/3. Rocnik/zimny/POS/Semestralna praca/POSGameOfLifeClient/source files/ConsoleGui.cpp">
+			<Option target="POSGameOfLifeClient"/>
+		</Unit>
+		<Unit filename="D:/Luki/Domace vyucovanie/FRI UNIZA/Bc/3. Rocnik/zimny/POS/Semestralna praca/POSGameOfLifeClient/source files/FormerWorlds.cpp">
+			<Option target="POSGameOfLifeClient"/>
+		</Unit>
+		<Unit filename="D:/Luki/Domace vyucovanie/FRI UNIZA/Bc/3. Rocnik/zimny/POS/Semestralna praca/POSGameOfLifeClient/source files/GameState.cpp">
 			<Option target="POSGameOfLifeClient"/>
 		</Unit>
 		<Unit filename="D:/Luki/Domace vyucovanie/FRI UNIZA/Bc/3. Rocnik/zimny/POS/Semestralna praca/POSGameOfLifeClient/source files/my_socket.cpp">

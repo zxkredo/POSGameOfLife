@@ -98,19 +98,85 @@ CMakeFiles\POSGameOfLifeClient.dir\source_files\my_socket.cpp.s: cmake_force
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\POSGameOfLifeClient.dir\source_files\my_socket.cpp.s /c "D:\Luki\Domace vyucovanie\FRI UNIZA\Bc\3. Rocnik\zimny\POS\Semestralna praca\POSGameOfLifeClient\source files\my_socket.cpp"
 <<
 
+CMakeFiles\POSGameOfLifeClient.dir\source_files\GameState.cpp.obj: CMakeFiles\POSGameOfLifeClient.dir\flags.make
+CMakeFiles\POSGameOfLifeClient.dir\source_files\GameState.cpp.obj: "D:\Luki\Domace vyucovanie\FRI UNIZA\Bc\3. Rocnik\zimny\POS\Semestralna praca\POSGameOfLifeClient\source files\GameState.cpp"
+CMakeFiles\POSGameOfLifeClient.dir\source_files\GameState.cpp.obj: CMakeFiles\POSGameOfLifeClient.dir\compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\Luki\Domace vyucovanie\FRI UNIZA\Bc\3. Rocnik\zimny\POS\Semestralna praca\POSGameOfLifeClient\cmake-build-debug_win\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/POSGameOfLifeClient.dir/source_files/GameState.cpp.obj"
+	$(CMAKE_COMMAND) -E cmake_cl_compile_depends --dep-file=CMakeFiles\POSGameOfLifeClient.dir\source_files\GameState.cpp.obj.d --working-dir="D:\Luki\Domace vyucovanie\FRI UNIZA\Bc\3. Rocnik\zimny\POS\Semestralna praca\POSGameOfLifeClient\cmake-build-debug_win" --filter-prefix="Note: including file: " -- C:\PROGRA~1\MICROS~3\2022\ENTERP~1\VC\Tools\MSVC\1436~1.325\bin\Hostx64\x64\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /showIncludes /FoCMakeFiles\POSGameOfLifeClient.dir\source_files\GameState.cpp.obj /FdCMakeFiles\POSGameOfLifeClient.dir\ /FS -c "D:\Luki\Domace vyucovanie\FRI UNIZA\Bc\3. Rocnik\zimny\POS\Semestralna praca\POSGameOfLifeClient\source files\GameState.cpp"
+<<
+
+CMakeFiles\POSGameOfLifeClient.dir\source_files\GameState.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/POSGameOfLifeClient.dir/source_files/GameState.cpp.i"
+	C:\PROGRA~1\MICROS~3\2022\ENTERP~1\VC\Tools\MSVC\1436~1.325\bin\Hostx64\x64\cl.exe > CMakeFiles\POSGameOfLifeClient.dir\source_files\GameState.cpp.i @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "D:\Luki\Domace vyucovanie\FRI UNIZA\Bc\3. Rocnik\zimny\POS\Semestralna praca\POSGameOfLifeClient\source files\GameState.cpp"
+<<
+
+CMakeFiles\POSGameOfLifeClient.dir\source_files\GameState.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/POSGameOfLifeClient.dir/source_files/GameState.cpp.s"
+	C:\PROGRA~1\MICROS~3\2022\ENTERP~1\VC\Tools\MSVC\1436~1.325\bin\Hostx64\x64\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\POSGameOfLifeClient.dir\source_files\GameState.cpp.s /c "D:\Luki\Domace vyucovanie\FRI UNIZA\Bc\3. Rocnik\zimny\POS\Semestralna praca\POSGameOfLifeClient\source files\GameState.cpp"
+<<
+
+CMakeFiles\POSGameOfLifeClient.dir\source_files\ConsoleGui.cpp.obj: CMakeFiles\POSGameOfLifeClient.dir\flags.make
+CMakeFiles\POSGameOfLifeClient.dir\source_files\ConsoleGui.cpp.obj: "D:\Luki\Domace vyucovanie\FRI UNIZA\Bc\3. Rocnik\zimny\POS\Semestralna praca\POSGameOfLifeClient\source files\ConsoleGui.cpp"
+CMakeFiles\POSGameOfLifeClient.dir\source_files\ConsoleGui.cpp.obj: CMakeFiles\POSGameOfLifeClient.dir\compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\Luki\Domace vyucovanie\FRI UNIZA\Bc\3. Rocnik\zimny\POS\Semestralna praca\POSGameOfLifeClient\cmake-build-debug_win\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/POSGameOfLifeClient.dir/source_files/ConsoleGui.cpp.obj"
+	$(CMAKE_COMMAND) -E cmake_cl_compile_depends --dep-file=CMakeFiles\POSGameOfLifeClient.dir\source_files\ConsoleGui.cpp.obj.d --working-dir="D:\Luki\Domace vyucovanie\FRI UNIZA\Bc\3. Rocnik\zimny\POS\Semestralna praca\POSGameOfLifeClient\cmake-build-debug_win" --filter-prefix="Note: including file: " -- C:\PROGRA~1\MICROS~3\2022\ENTERP~1\VC\Tools\MSVC\1436~1.325\bin\Hostx64\x64\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /showIncludes /FoCMakeFiles\POSGameOfLifeClient.dir\source_files\ConsoleGui.cpp.obj /FdCMakeFiles\POSGameOfLifeClient.dir\ /FS -c "D:\Luki\Domace vyucovanie\FRI UNIZA\Bc\3. Rocnik\zimny\POS\Semestralna praca\POSGameOfLifeClient\source files\ConsoleGui.cpp"
+<<
+
+CMakeFiles\POSGameOfLifeClient.dir\source_files\ConsoleGui.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/POSGameOfLifeClient.dir/source_files/ConsoleGui.cpp.i"
+	C:\PROGRA~1\MICROS~3\2022\ENTERP~1\VC\Tools\MSVC\1436~1.325\bin\Hostx64\x64\cl.exe > CMakeFiles\POSGameOfLifeClient.dir\source_files\ConsoleGui.cpp.i @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "D:\Luki\Domace vyucovanie\FRI UNIZA\Bc\3. Rocnik\zimny\POS\Semestralna praca\POSGameOfLifeClient\source files\ConsoleGui.cpp"
+<<
+
+CMakeFiles\POSGameOfLifeClient.dir\source_files\ConsoleGui.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/POSGameOfLifeClient.dir/source_files/ConsoleGui.cpp.s"
+	C:\PROGRA~1\MICROS~3\2022\ENTERP~1\VC\Tools\MSVC\1436~1.325\bin\Hostx64\x64\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\POSGameOfLifeClient.dir\source_files\ConsoleGui.cpp.s /c "D:\Luki\Domace vyucovanie\FRI UNIZA\Bc\3. Rocnik\zimny\POS\Semestralna praca\POSGameOfLifeClient\source files\ConsoleGui.cpp"
+<<
+
+CMakeFiles\POSGameOfLifeClient.dir\source_files\FormerWorlds.cpp.obj: CMakeFiles\POSGameOfLifeClient.dir\flags.make
+CMakeFiles\POSGameOfLifeClient.dir\source_files\FormerWorlds.cpp.obj: "D:\Luki\Domace vyucovanie\FRI UNIZA\Bc\3. Rocnik\zimny\POS\Semestralna praca\POSGameOfLifeClient\source files\FormerWorlds.cpp"
+CMakeFiles\POSGameOfLifeClient.dir\source_files\FormerWorlds.cpp.obj: CMakeFiles\POSGameOfLifeClient.dir\compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\Luki\Domace vyucovanie\FRI UNIZA\Bc\3. Rocnik\zimny\POS\Semestralna praca\POSGameOfLifeClient\cmake-build-debug_win\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/POSGameOfLifeClient.dir/source_files/FormerWorlds.cpp.obj"
+	$(CMAKE_COMMAND) -E cmake_cl_compile_depends --dep-file=CMakeFiles\POSGameOfLifeClient.dir\source_files\FormerWorlds.cpp.obj.d --working-dir="D:\Luki\Domace vyucovanie\FRI UNIZA\Bc\3. Rocnik\zimny\POS\Semestralna praca\POSGameOfLifeClient\cmake-build-debug_win" --filter-prefix="Note: including file: " -- C:\PROGRA~1\MICROS~3\2022\ENTERP~1\VC\Tools\MSVC\1436~1.325\bin\Hostx64\x64\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /showIncludes /FoCMakeFiles\POSGameOfLifeClient.dir\source_files\FormerWorlds.cpp.obj /FdCMakeFiles\POSGameOfLifeClient.dir\ /FS -c "D:\Luki\Domace vyucovanie\FRI UNIZA\Bc\3. Rocnik\zimny\POS\Semestralna praca\POSGameOfLifeClient\source files\FormerWorlds.cpp"
+<<
+
+CMakeFiles\POSGameOfLifeClient.dir\source_files\FormerWorlds.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/POSGameOfLifeClient.dir/source_files/FormerWorlds.cpp.i"
+	C:\PROGRA~1\MICROS~3\2022\ENTERP~1\VC\Tools\MSVC\1436~1.325\bin\Hostx64\x64\cl.exe > CMakeFiles\POSGameOfLifeClient.dir\source_files\FormerWorlds.cpp.i @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "D:\Luki\Domace vyucovanie\FRI UNIZA\Bc\3. Rocnik\zimny\POS\Semestralna praca\POSGameOfLifeClient\source files\FormerWorlds.cpp"
+<<
+
+CMakeFiles\POSGameOfLifeClient.dir\source_files\FormerWorlds.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/POSGameOfLifeClient.dir/source_files/FormerWorlds.cpp.s"
+	C:\PROGRA~1\MICROS~3\2022\ENTERP~1\VC\Tools\MSVC\1436~1.325\bin\Hostx64\x64\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\POSGameOfLifeClient.dir\source_files\FormerWorlds.cpp.s /c "D:\Luki\Domace vyucovanie\FRI UNIZA\Bc\3. Rocnik\zimny\POS\Semestralna praca\POSGameOfLifeClient\source files\FormerWorlds.cpp"
+<<
+
 # Object files for target POSGameOfLifeClient
 POSGameOfLifeClient_OBJECTS = \
 "CMakeFiles\POSGameOfLifeClient.dir\main.cpp.obj" \
-"CMakeFiles\POSGameOfLifeClient.dir\source_files\my_socket.cpp.obj"
+"CMakeFiles\POSGameOfLifeClient.dir\source_files\my_socket.cpp.obj" \
+"CMakeFiles\POSGameOfLifeClient.dir\source_files\GameState.cpp.obj" \
+"CMakeFiles\POSGameOfLifeClient.dir\source_files\ConsoleGui.cpp.obj" \
+"CMakeFiles\POSGameOfLifeClient.dir\source_files\FormerWorlds.cpp.obj"
 
 # External object files for target POSGameOfLifeClient
 POSGameOfLifeClient_EXTERNAL_OBJECTS =
 
 POSGameOfLifeClient.exe: CMakeFiles\POSGameOfLifeClient.dir\main.cpp.obj
 POSGameOfLifeClient.exe: CMakeFiles\POSGameOfLifeClient.dir\source_files\my_socket.cpp.obj
+POSGameOfLifeClient.exe: CMakeFiles\POSGameOfLifeClient.dir\source_files\GameState.cpp.obj
+POSGameOfLifeClient.exe: CMakeFiles\POSGameOfLifeClient.dir\source_files\ConsoleGui.cpp.obj
+POSGameOfLifeClient.exe: CMakeFiles\POSGameOfLifeClient.dir\source_files\FormerWorlds.cpp.obj
 POSGameOfLifeClient.exe: CMakeFiles\POSGameOfLifeClient.dir\build.make
 POSGameOfLifeClient.exe: CMakeFiles\POSGameOfLifeClient.dir\objects1.rsp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="D:\Luki\Domace vyucovanie\FRI UNIZA\Bc\3. Rocnik\zimny\POS\Semestralna praca\POSGameOfLifeClient\cmake-build-debug_win\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable POSGameOfLifeClient.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="D:\Luki\Domace vyucovanie\FRI UNIZA\Bc\3. Rocnik\zimny\POS\Semestralna praca\POSGameOfLifeClient\cmake-build-debug_win\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable POSGameOfLifeClient.exe"
 	"C:\Program Files\JetBrains\CLion 2023.2.2\bin\cmake\win\x64\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\POSGameOfLifeClient.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x64\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x64\mt.exe --manifests -- C:\PROGRA~1\MICROS~3\2022\ENTERP~1\VC\Tools\MSVC\1436~1.325\bin\Hostx64\x64\link.exe /nologo @CMakeFiles\POSGameOfLifeClient.dir\objects1.rsp @<<
  /out:POSGameOfLifeClient.exe /implib:POSGameOfLifeClient.lib /pdb:"D:\Luki\Domace vyucovanie\FRI UNIZA\Bc\3. Rocnik\zimny\POS\Semestralna praca\POSGameOfLifeClient\cmake-build-debug_win\POSGameOfLifeClient.pdb" /version:0.0 /machine:x64 /debug /INCREMENTAL /subsystem:console  wsock32.lib ws2_32.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib 
 <<

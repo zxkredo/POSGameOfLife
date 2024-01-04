@@ -9,6 +9,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "D:/Luki/Domace vyucovanie/FRI UNIZA/Bc/3. Rocnik/zimny/POS/Semestralna praca/POSGameOfLifeClient/main.cpp" "CMakeFiles/POSGameOfLifeClient.dir/main.cpp.obj" "msvc" "CMakeFiles/POSGameOfLifeClient.dir/main.cpp.obj.d"
+  "D:/Luki/Domace vyucovanie/FRI UNIZA/Bc/3. Rocnik/zimny/POS/Semestralna praca/POSGameOfLifeClient/source files/ConsoleGui.cpp" "CMakeFiles/POSGameOfLifeClient.dir/source_files/ConsoleGui.cpp.obj" "msvc" "CMakeFiles/POSGameOfLifeClient.dir/source_files/ConsoleGui.cpp.obj.d"
+  "D:/Luki/Domace vyucovanie/FRI UNIZA/Bc/3. Rocnik/zimny/POS/Semestralna praca/POSGameOfLifeClient/source files/FormerWorlds.cpp" "CMakeFiles/POSGameOfLifeClient.dir/source_files/FormerWorlds.cpp.obj" "msvc" "CMakeFiles/POSGameOfLifeClient.dir/source_files/FormerWorlds.cpp.obj.d"
+  "D:/Luki/Domace vyucovanie/FRI UNIZA/Bc/3. Rocnik/zimny/POS/Semestralna praca/POSGameOfLifeClient/source files/GameState.cpp" "CMakeFiles/POSGameOfLifeClient.dir/source_files/GameState.cpp.obj" "msvc" "CMakeFiles/POSGameOfLifeClient.dir/source_files/GameState.cpp.obj.d"
   "D:/Luki/Domace vyucovanie/FRI UNIZA/Bc/3. Rocnik/zimny/POS/Semestralna praca/POSGameOfLifeClient/source files/my_socket.cpp" "CMakeFiles/POSGameOfLifeClient.dir/source_files/my_socket.cpp.obj" "msvc" "CMakeFiles/POSGameOfLifeClient.dir/source_files/my_socket.cpp.obj.d"
   )
 
