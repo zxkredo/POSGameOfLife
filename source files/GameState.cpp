@@ -85,6 +85,11 @@ void GameState::start_checking_cells() {
         {
             update_future_world_cell(rowToCheck, columnToCheck, false);
         }
+        else
+        {
+            update_future_world_cell(rowToCheck, columnToCheck,
+                                     get_current_world_cell_value(rowToCheck, columnToCheck));
+        }
     }
 }
 
