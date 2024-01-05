@@ -81,7 +81,7 @@ private:
     /// \return The state of the cell on provided coordinates
     bool get_current_world_cell_value(const unsigned int& row, const unsigned int& column);
 
-    void update_future_world_cell(unsigned int row, unsigned int column, bool cellState);
+    void update_future_world_cell(const unsigned int& row,const unsigned int& column, bool cellState);
 
     void swap_worlds();
 };

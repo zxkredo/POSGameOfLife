@@ -124,7 +124,7 @@ bool GameState::get_current_world_cell_value(const unsigned int& row, const unsi
     return this->currentWorld->at(row).at(column);
 }
 
-void GameState::update_future_world_cell(unsigned int row, unsigned int column, bool cellState) {
+void GameState::update_future_world_cell(const unsigned int& row, const unsigned int& column, bool cellState) {
     std::unique_lock lock(this->mutexFutureWorld);
     this->futureWorld->at(row).at(column) = cellState;
     this->alreadyCheckedCells++;
