@@ -32,8 +32,13 @@ private:
     unsigned int toBeCheckedY;
 
     //variables for thread synchronization, to be determined
-    std::mutex mutexCurrentWorld;
+    std::mutex mutexFutureWorld;
     std::mutex mutexToBeChecked;
+    std::mutex generating;
+
+    std::condition_variable startGenerating;
+    std::condition_variable finishedGenerating;
+
     std::condition_variable allChecked;
     std::condition_variable currentWorldUpdated;
 
@@ -53,6 +58,7 @@ public:
     void start_checking();
 
 private:
+    void swap_worlds();
     //data processing
     /// Get coordinates on which it is necessary to check the state of a cell
     /// \param posX x position to be checked in world, top is 0
