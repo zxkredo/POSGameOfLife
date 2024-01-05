@@ -47,14 +47,20 @@ public:
     GameState(unsigned int xSize, unsigned int ySize);
 
     //controls
-    void start_generating_future_world();
-    /// Only for one thread, because it is necessary to wait for the class to stop mutexGenerating the future world
-    /// and it has been swapped to current world
-    /// \return current world
-    std::vector<std::vector<bool>>* retrieve_updated_current_world();
+
+    /// If already generating waits until the previous request has been generated.
+    /// \return The updated (most recently generated) current world
+    std::vector<std::vector<bool>> retrieve_current_world();
+
+    /// If already generating waits until the previous request has been generated.
     void insert_current_world(const std::vector<std::vector<bool>>& starting_world);
 
-    //function to begin checking (usable in multiple threads)
+    /// Requests the checkers to start generating the future world from the current.
+    /// If already generating waits until the previous request has been generated.
+    void start_generating_future_world();
+
+    /// Function for purposes of calculating living cells.
+    /// Can be called from multiple thread to parallelize the calculation.
     void start_checking_cells();
 
 private:
