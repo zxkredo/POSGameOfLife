@@ -12,9 +12,9 @@
 
 class GameState {
 private:
-    //variable to be able to return from start_checking() function
+    //variable to be able to return from start_checking_cells() function
     bool stopThreads;
-    //whether StateCheckers are generating
+    //whether StateCheckers are mutexGenerating
     bool isGenerating;
     //how many cells have been checked so far
     unsigned long alreadyCheckedCells;
@@ -34,7 +34,7 @@ private:
     //variables for thread synchronization, to be determined
     std::mutex mutexFutureWorld;
     std::mutex mutexToBeChecked;
-    std::mutex generating;
+    std::mutex mutexGenerating;
 
     std::condition_variable startGenerating;
     std::condition_variable finishedGenerating;
@@ -47,15 +47,15 @@ public:
     GameState(unsigned int xSize, unsigned int ySize);
 
     //controls
-    void start_generating();
-    /// Only for one thread, because it is necessary to wait for the class to stop generating the future world
+    void start_generating_future_world();
+    /// Only for one thread, because it is necessary to wait for the class to stop mutexGenerating the future world
     /// and it has been swapped to current world
     /// \return current world
     std::vector<std::vector<bool>>* retrieve_updated_current_world();
     void insert_current_world(const std::vector<std::vector<bool>>& starting_world);
 
     //function to begin checking (usable in multiple threads)
-    void start_checking();
+    void start_checking_cells();
 
 private:
     void swap_worlds();
@@ -63,7 +63,7 @@ private:
     /// Get coordinates on which it is necessary to check the state of a cell
     /// \param posX x position to be checked in world, top is 0
     /// \param posY y position to be checked in world, left is 0
-    /// \return Whether it is necessary to terminate the thread generating values
+    /// \return Whether it is necessary to terminate the thread mutexGenerating values
     bool get_cell_coordinates_to_check(unsigned int& posX, unsigned int& posY);
 
     /// Get the state of a cell in the world

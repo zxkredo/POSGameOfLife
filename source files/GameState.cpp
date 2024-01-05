@@ -12,14 +12,15 @@ GameState::GameState(unsigned int xSize, unsigned int ySize) : xSize(xSize), ySi
     this->futureWorld = &this->world1;
 }
 
-void GameState::start_generating() {
-    std::unique_lock<std::mutex> lock(this->generating);
+void GameState::start_generating_future_world() {
+    std::unique_lock<std::mutex> lock(this->mutexGenerating);
     if (this->isGenerating) {
         finishedGenerating.wait(lock);
     }
     this->swap_worlds();
 
     this->isGenerating = true;
+    this->startGenerating.notify_all();
 }
 
 std::vector<std::vector<bool>> *GameState::retrieve_updated_current_world() {
@@ -30,7 +31,7 @@ void GameState::insert_current_world(const std::vector<std::vector<bool>> &start
 
 }
 
-void GameState::start_checking() {
+void GameState::start_checking_cells() {
 
 }
 
@@ -51,8 +52,14 @@ void GameState::stop_simulation() {
 }
 
 void GameState::swap_worlds() {
-    std::swap(futureWorld, currentWorld);
-    this->toBeCheckedX = 0;
-    this->toBeCheckedY = 0;
-    this->alreadyCheckedCells = 0;
+    {
+        std::unique_lock lock(this->mutexFutureWorld);
+        std::swap(futureWorld, currentWorld);
+    }
+    {
+        std::unique_lock lock(this->mutexToBeChecked);
+        this->toBeCheckedX = 0;
+        this->toBeCheckedY = 0;
+        this->alreadyCheckedCells = 0;
+    }
 }
