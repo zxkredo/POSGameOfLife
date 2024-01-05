@@ -7,7 +7,9 @@
 GameState::GameState(unsigned int rows, unsigned int columns) : rows(rows), columns(columns), stopThreads(false), isGenerating(
         false), alreadyCheckedCells(0), toBeCheckedRow(0), toBeCheckedColumn(0)
         {
-    this->world1, this->world2 = std::vector(this->rows, std::vector<bool>(this->columns, false));
+    auto emptyWorld = std::vector(this->rows, std::vector<bool>(this->columns, false));
+    this->world1 = emptyWorld;
+    this->world2 = emptyWorld;
     this->currentWorld = &this->world2;
     this->futureWorld = &this->world1;
     this->cellCount = this->rows * this->columns;
@@ -58,9 +60,9 @@ void GameState::start_checking_cells() {
         unsigned int rowEnd = (rowToCheck >= this->rows ? rowToCheck : rowToCheck + 1);
         unsigned int colStart = (columnToCheck == 0 ? columnToCheck : columnToCheck - 1);
         unsigned int colEnd = (columnToCheck >= this->columns ? columnToCheck : columnToCheck + 1);
-        for (unsigned int row = rowStart; row <= rowEnd; ++row)
+        for (unsigned int row = rowStart; row < rowEnd; ++row)
         {
-            for (unsigned int col = colStart - 1; col <= colEnd; ++col)
+            for (unsigned int col = colStart - 1; col < colEnd; ++col)
             {
                 if (get_current_world_cell_value(row, col))
                     sumOfAlive++;
