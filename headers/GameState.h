@@ -32,8 +32,8 @@ private:
     unsigned int toBeCheckedY;
 
     //variables for thread synchronization, to be determined
-    std::mutex mutexFutureWorld;
-    std::mutex mutexLastChecked;
+    std::mutex mutexCurrentWorld;
+    std::mutex mutexToBeChecked;
     std::condition_variable allChecked;
     std::condition_variable currentWorldUpdated;
 
