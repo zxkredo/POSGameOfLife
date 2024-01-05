@@ -12,12 +12,15 @@
 
 class GameState {
 private:
-    //variable to be able to return from start_checking_cells() function
+
     bool stopThreads;
     //whether StateCheckers are mutexGenerating
     bool isGenerating;
     //how many cells have been checked so far
     unsigned long alreadyCheckedCells;
+
+    //count of all cells in a world
+    unsigned long cellCount;
 
     std::vector<std::vector<bool>> world1;
     std::vector<std::vector<bool>> world2;
@@ -25,11 +28,11 @@ private:
     std::vector<std::vector<bool>>* currentWorld;
     std::vector<std::vector<bool>>* futureWorld;
 
-    //top left corner is x = 0 , y = 0
-    unsigned int xSize;
-    unsigned int ySize;
-    unsigned int toBeCheckedX;
-    unsigned int toBeCheckedY;
+    //top left corner is row = 0 , column = 0
+    unsigned int rows;
+    unsigned int columns;
+    unsigned int toBeCheckedRow;
+    unsigned int toBeCheckedColumn;
 
     //variables for thread synchronization, to be determined
     std::mutex mutexFutureWorld;
@@ -40,11 +43,11 @@ private:
     std::condition_variable finishedGenerating;
 
     std::condition_variable allChecked;
-    std::condition_variable currentWorldUpdated;
 
 public:
     //contructor
-    GameState(unsigned int xSize, unsigned int ySize);
+    //Game world uses matrix coordinates top left is 0, 0 ; top right is 0, columns (number of columns)
+    GameState(unsigned int rows, unsigned int columns);
 
     //controls
 
@@ -63,24 +66,24 @@ public:
     /// Can be called from multiple thread to parallelize the calculation.
     void start_checking_cells();
 
+    /// Peacefully let all threads leave infinite loop of calculation
+    void stop_simulation();
 private:
-    void swap_worlds();
     //data processing
     /// Get coordinates on which it is necessary to check the state of a cell
-    /// \param posX x position to be checked in world, top is 0
-    /// \param posY y position to be checked in world, left is 0
-    /// \return Whether it is necessary to terminate the thread mutexGenerating values
-    bool get_cell_coordinates_to_check(unsigned int& posX, unsigned int& posY);
+    /// \param row x position to be checked in world, top is 0
+    /// \param column y position to be checked in world, left is 0
+    void get_cell_coordinates_to_check(unsigned int& row, unsigned int& column);
 
     /// Get the state of a cell in the world
-    /// \param posX x position in world, top is 0
-    /// \param posY y position in world, left is 0
+    /// \param row x position in world, top is 0
+    /// \param column y position in world, left is 0
     /// \return The state of the cell on provided coordinates
-    bool get_current_world_cell_value(unsigned int posX, unsigned int posY);
+    bool get_current_world_cell_value(const unsigned int& row, const unsigned int& column);
 
-    void update_future_world_cell(unsigned int posX, unsigned int posY, bool cellState);
+    void update_future_world_cell(unsigned int row, unsigned int column, bool cellState);
 
-    void stop_simulation();
+    void swap_worlds();
 };
 
 
