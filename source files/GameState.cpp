@@ -57,12 +57,12 @@ void GameState::start_checking_cells() {
         unsigned int sumOfAlive = 0;
 
         unsigned int rowStart = (rowToCheck == 0 ? rowToCheck : rowToCheck - 1);
-        unsigned int rowEnd = (rowToCheck >= this->rows ? rowToCheck : rowToCheck + 1);
+        unsigned int rowEnd = (rowToCheck + 1 < this->rows ? rowToCheck + 1: rowToCheck);
         unsigned int colStart = (columnToCheck == 0 ? columnToCheck : columnToCheck - 1);
-        unsigned int colEnd = (columnToCheck >= this->columns ? columnToCheck : columnToCheck + 1);
-        for (unsigned int row = rowStart; row < rowEnd; ++row)
+        unsigned int colEnd = (columnToCheck + 1 < this->columns? columnToCheck + 1: columnToCheck);
+        for (unsigned int row = rowStart; row <= rowEnd; ++row)
         {
-            for (unsigned int col = colStart - 1; col < colEnd; ++col)
+            for (unsigned int col = colStart - 1; col <= colEnd; ++col)
             {
                 if (get_current_world_cell_value(row, col))
                     sumOfAlive++;
