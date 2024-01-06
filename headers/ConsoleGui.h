@@ -10,12 +10,14 @@
 #include "GameState.h"
 
 class ConsoleGui {
+    typedef std::vector<std::vector<bool>> world_t;
 private:
     FormerWorlds formerWorlds;
-    GameState* gameState;
 public:
-    explicit ConsoleGui(GameState *gameState);
+    explicit ConsoleGui();
     void start();
+private:
+    static void printWorldToConsole(world_t world);
 };
 
 
