@@ -22,9 +22,9 @@ void ConsoleGui::start() {
     std::string userInput = "a";
     while (userInput == "a")
     {
-        world_t currentWorld = this->gameState.retrieve_current_world();
+        this->formerWorlds.add(this->gameState.retrieve_current_world());
         this->gameState.start_generating_future_world();
-        printWorldToConsole(currentWorld);
+        printWorldToConsole(this->formerWorlds.getNewest());
         std::cin >> userInput;
     }
 
