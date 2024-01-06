@@ -41,25 +41,28 @@ class FormerWorlds {
         std::vector<std::vector<bool>>& getCurrent();
     };
 private:
-    FormerWorldsBlock* first;
-    FormerWorldsBlock* last;
+    FormerWorldsBlock* newest;
+    FormerWorldsBlock* oldest;
     const unsigned int size;
+    unsigned int blockCount;
 
 public:
+    ///Undefined behaviour for size less than 2
     explicit FormerWorlds(unsigned int size);
 
     virtual ~FormerWorlds();
 
-    std::vector<std::vector<bool>>& getFirst();
-    std::vector<std::vector<bool>>& getLast();
+    std::vector<std::vector<bool>>& getNewest();
+    std::vector<std::vector<bool>>& getOldest();
 
-    //if an item is added over the limit (size), the last element is deleted
+    ///If an item is added over the limit (size), the oldest element is deleted
+    ///Does not take into account situations where size of container is less than 2
     void add(const std::vector<std::vector<bool>>& data);
 
-    bool isEmpty();
+    [[nodiscard]] bool isEmpty() const;
 
-    //throws exception if empty
-    //returns iterator with current block as first block in FormerWorlds
+    ///Throws exception if empty
+    ///returns iterator with current block as newest block in FormerWorlds
     FormerWorldsIterator getIterator();
 };
 
