@@ -3,6 +3,7 @@
 //
 
 #include <iostream>
+#include <thread>
 #include <sstream>
 #include <windows.h>
 #include "../headers/ConsoleGui.h"
