@@ -8,10 +8,9 @@ static void startCalculator(GameState& gameState)
 }
 
 int main() {
-    GameState gamestate(5,5);
+    GameState gamestate(10,100);
 
     std::vector<std::thread*> threads;
-    threads.reserve(4);
     for (int i = 0; i < 4; ++i) {
         threads.emplace_back(new std::thread(startCalculator, std::ref(gamestate)));
     }

@@ -4,17 +4,18 @@
 
 #include <iostream>
 #include <sstream>
+#include <windows.h>
 #include "../headers/ConsoleGui.h"
 
 ConsoleGui::ConsoleGui(GameState& gameState) : gameState(gameState), formerWorlds(10) {}
 
 void ConsoleGui::start() {
-    world_t startingWorld = std::vector(5, std::vector(5, false));
-    startingWorld.at(1).at(2) = true;
-    startingWorld.at(2).at(1) = true;
-    startingWorld.at(2).at(2) = true;
-    startingWorld.at(2).at(3) = true;
-    startingWorld.at(3).at(2) = true;
+    world_t startingWorld = std::vector(10, std::vector(100, false));
+    startingWorld.at(1+3).at(2+30) = true;
+    startingWorld.at(2+3).at(1+30) = true;
+    startingWorld.at(2+3).at(2+30) = true;
+    startingWorld.at(2+3).at(3+30) = true;
+    startingWorld.at(3+3).at(2+30) = true;
 
     this->gameState.insert_current_world(startingWorld);
 
@@ -24,7 +25,6 @@ void ConsoleGui::start() {
         world_t currentWorld = this->gameState.retrieve_current_world();
         this->gameState.start_generating_future_world();
         printWorldToConsole(currentWorld);
-
         std::cin >> userInput;
     }
 
@@ -33,8 +33,9 @@ void ConsoleGui::start() {
 }
 
 void ConsoleGui::printWorldToConsole(const world_t& world) {
+    SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), COORD{ 0, 0 } );
+    std::this_thread::sleep_for(std::chrono::milliseconds(1000/ConsoleGui::fps));
     std::cout << std::endl << std::endl << std::endl;
-    std::cout << "-------------------------------------------------------------------" << std::endl;
     for (const auto &row: world)
     {
         std::stringstream rowToPrint;
@@ -42,7 +43,7 @@ void ConsoleGui::printWorldToConsole(const world_t& world) {
         {
             if (cell)
             {
-                rowToPrint << "@";
+                rowToPrint << "X";
             }
             else
             {
@@ -51,5 +52,4 @@ void ConsoleGui::printWorldToConsole(const world_t& world) {
         }
         std::cout << rowToPrint.str() << std::endl;
     }
-    std::cout << "-------------------------------------------------------------------" << std::endl;
 }

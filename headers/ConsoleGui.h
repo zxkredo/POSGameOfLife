@@ -12,6 +12,7 @@
 class ConsoleGui {
     typedef std::vector<std::vector<bool>> world_t;
 private:
+    static const int fps = 2;
     FormerWorlds formerWorlds;
     GameState& gameState;
 public:
