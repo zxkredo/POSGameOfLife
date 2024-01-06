@@ -3,6 +3,7 @@
 //
 
 #include <iostream>
+#include <sstream>
 #include "../headers/ConsoleGui.h"
 
 ConsoleGui::ConsoleGui(GameState& gameState) : gameState(gameState), formerWorlds(10) {}
@@ -17,14 +18,14 @@ void ConsoleGui::start() {
 
     this->gameState.insert_current_world(currentWorld);
 
-    unsigned long long i = 0;
-    while (i < 200)
+    std::string userInput;
+    while (userInput.empty())
     {
         currentWorld = this->gameState.retrieve_current_world();
-        printWorldToConsole(currentWorld);
         this->gameState.start_generating_future_world();
-        i++;
-        std::cout << i << std::endl;
+        printWorldToConsole(currentWorld);
+
+        std::cin >> userInput;
     }
 
     this->gameState.stop_simulation();
@@ -32,5 +33,23 @@ void ConsoleGui::start() {
 }
 
 void ConsoleGui::printWorldToConsole(const world_t& world) {
-
+    std::cout << std::endl << std::endl << std::endl;
+    std::cout << "-------------------------------------------------------------------" << std::endl;
+    for (const auto &row: world)
+    {
+        std::stringstream rowToPrint;
+        for (const auto &cell: row)
+        {
+            if (cell)
+            {
+                rowToPrint << ".";
+            }
+            else
+            {
+                rowToPrint << "O";
+            }
+        }
+        std::cout << rowToPrint.str() << std::endl;
+    }
+    std::cout << "-------------------------------------------------------------------" << std::endl;
 }
