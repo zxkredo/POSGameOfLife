@@ -44,10 +44,19 @@ void FormerWorlds::FormerWorldsBlock::setNext(FormerWorlds::FormerWorldsBlock *b
 
 }
 
-FormerWorlds::FormerWorlds(const unsigned int size) : size(size), blockCount(0) {}
+FormerWorlds::FormerWorlds(const unsigned int size) : size(size), blockCount(0), newest(nullptr), oldest(nullptr) {}
 
 FormerWorlds::~FormerWorlds() {
-    //TODO delete all blocks from dynamic memory
+    FormerWorlds::FormerWorldsBlock* blockToDelete = this->newest;
+    while (blockToDelete != nullptr)
+    {
+        this->newest = blockToDelete->getPrevious();
+        this->newest->setNext(nullptr);
+        delete blockToDelete;
+        blockToDelete = this->newest;
+    }
+    this->oldest = nullptr;
+    this->blockCount = 0;
 }
 
 std::vector<std::vector<bool>> &FormerWorlds::getNewest() {
