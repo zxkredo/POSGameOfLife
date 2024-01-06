@@ -20,7 +20,12 @@ void GameState::start_generating_future_world() {
     while (this->isGenerating) {
         finishedGenerating.wait(lock);
     }
-
+    {
+        std::unique_lock lock1(this->mutexToBeChecked);
+        this->toBeCheckedRow = 0;
+        this->toBeCheckedColumn = 0;
+        this->alreadyCheckedCells = 0;
+    }
     this->isGenerating = true;
     this->startGenerating.notify_all();
 }
@@ -143,13 +148,6 @@ void GameState::stop_simulation() {
 void GameState::swap_worlds() {
 
     std::swap(futureWorld, currentWorld);
-
-    {
-        std::unique_lock lock(this->mutexToBeChecked);
-        this->toBeCheckedRow = 0;
-        this->toBeCheckedColumn = 0;
-        this->alreadyCheckedCells = 0;
-    }
 
     {
         std::unique_lock lock1(mutexGenerating);

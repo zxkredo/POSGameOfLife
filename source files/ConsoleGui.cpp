@@ -9,19 +9,19 @@
 ConsoleGui::ConsoleGui(GameState& gameState) : gameState(gameState), formerWorlds(10) {}
 
 void ConsoleGui::start() {
-    world_t currentWorld = std::vector(5, std::vector(5, false));
-    currentWorld.at(1).at(2) = true;
-    currentWorld.at(2).at(1) = true;
-    currentWorld.at(2).at(2) = true;
-    currentWorld.at(2).at(3) = true;
-    currentWorld.at(3).at(2) = true;
+    world_t startingWorld = std::vector(5, std::vector(5, false));
+    startingWorld.at(1).at(2) = true;
+    startingWorld.at(2).at(1) = true;
+    startingWorld.at(2).at(2) = true;
+    startingWorld.at(2).at(3) = true;
+    startingWorld.at(3).at(2) = true;
 
-    this->gameState.insert_current_world(currentWorld);
+    this->gameState.insert_current_world(startingWorld);
 
-    std::string userInput;
-    while (userInput.empty())
+    std::string userInput = "a";
+    while (userInput == "a")
     {
-        currentWorld = this->gameState.retrieve_current_world();
+        world_t currentWorld = this->gameState.retrieve_current_world();
         this->gameState.start_generating_future_world();
         printWorldToConsole(currentWorld);
 
@@ -42,11 +42,11 @@ void ConsoleGui::printWorldToConsole(const world_t& world) {
         {
             if (cell)
             {
-                rowToPrint << ".";
+                rowToPrint << "@";
             }
             else
             {
-                rowToPrint << "O";
+                rowToPrint << ".";
             }
         }
         std::cout << rowToPrint.str() << std::endl;
