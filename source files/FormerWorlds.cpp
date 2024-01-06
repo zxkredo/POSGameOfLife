@@ -65,7 +65,6 @@ FormerWorlds::~FormerWorlds() {
     while (blockToDelete != nullptr)
     {
         this->newest = blockToDelete->getPrevious();
-        this->newest->setNext(nullptr);
         delete blockToDelete;
         blockToDelete = this->newest;
     }
