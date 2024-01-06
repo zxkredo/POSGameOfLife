@@ -9,6 +9,7 @@
 #include <vector>
 
 class FormerWorlds {
+private:
     class FormerWorldsBlock {
     private:
         std::vector<std::vector<bool>> data;
@@ -25,16 +26,16 @@ class FormerWorlds {
         void setPrevious(FormerWorldsBlock* block);
         void setNext(FormerWorldsBlock* block);
     };
-
+public:
     class FormerWorldsIterator {
     private:
-        FormerWorldsBlock& currentBlock;
+        FormerWorldsBlock* currentBlock;
     public:
-        explicit FormerWorldsIterator(FormerWorldsBlock &currentBlock);
+        explicit FormerWorldsIterator(FormerWorldsBlock *currentBlock);
 
-        //return false if at the end
+        ///return false if at the end
         bool forward();
-        //return false if at the beginning
+        ///return false if at the beginning
         bool backward();
 
         //return data

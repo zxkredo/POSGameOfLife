@@ -4,19 +4,33 @@
 
 #include "../headers/FormerWorlds.h"
 
-FormerWorlds::FormerWorldsIterator::FormerWorldsIterator(FormerWorlds::FormerWorldsBlock &currentBlock) : currentBlock(
+FormerWorlds::FormerWorldsIterator::FormerWorldsIterator(FormerWorlds::FormerWorldsBlock* currentBlock) : currentBlock(
         currentBlock) {}
 
 bool FormerWorlds::FormerWorldsIterator::forward() {
-    return false;
+    FormerWorlds::FormerWorldsBlock* nextBlock = this->currentBlock->getNext();
+    if (nextBlock == nullptr)
+    {
+        return false;
+    }
+
+    this->currentBlock = nextBlock;
+    return true;
 }
 
 bool FormerWorlds::FormerWorldsIterator::backward() {
-    return false;
+    FormerWorlds::FormerWorldsBlock* previousBlock = this->currentBlock->getPrevious();
+    if (previousBlock == nullptr)
+    {
+        return false;
+    }
+
+    this->currentBlock = previousBlock;
+    return true;
 }
 
 std::vector<std::vector<bool>> &FormerWorlds::FormerWorldsIterator::getCurrent() {
-    return <#initializer#>;
+    return this->currentBlock->getData();
 }
 
 FormerWorlds::FormerWorldsBlock::FormerWorldsBlock(const std::vector<std::vector<bool>> &data,
@@ -25,23 +39,23 @@ FormerWorlds::FormerWorldsBlock::FormerWorldsBlock(const std::vector<std::vector
                                                                                                 previous(previous) {}
 
 std::vector<std::vector<bool>> &FormerWorlds::FormerWorldsBlock::getData() {
-    return ;
+    return this->data;
 }
 
 FormerWorlds::FormerWorldsBlock *FormerWorlds::FormerWorldsBlock::getNext() {
-    return nullptr;
+    return this->next;
 }
 
 FormerWorlds::FormerWorldsBlock *FormerWorlds::FormerWorldsBlock::getPrevious() {
-    return nullptr;
+    return this->previous;
 }
 
 void FormerWorlds::FormerWorldsBlock::setPrevious(FormerWorlds::FormerWorldsBlock *block) {
-
+    this->previous = block;
 }
 
 void FormerWorlds::FormerWorldsBlock::setNext(FormerWorlds::FormerWorldsBlock *block) {
-
+    this->next = block;
 }
 
 FormerWorlds::FormerWorlds(const unsigned int size) : size(size), blockCount(0), newest(nullptr), oldest(nullptr) {}
