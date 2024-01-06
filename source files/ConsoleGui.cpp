@@ -34,7 +34,6 @@ void ConsoleGui::start() {
 
 void ConsoleGui::printWorldToConsole(const world_t& world) {
     SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), COORD{ 0, 0 } );
-    std::this_thread::sleep_for(std::chrono::milliseconds(1000/ConsoleGui::fps));
     std::cout << std::endl << std::endl << std::endl;
     for (const auto &row: world)
     {
@@ -52,4 +51,5 @@ void ConsoleGui::printWorldToConsole(const world_t& world) {
         }
         std::cout << rowToPrint.str() << std::endl;
     }
+    std::this_thread::sleep_for(std::chrono::milliseconds(1000/ConsoleGui::fps));
 }
