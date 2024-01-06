@@ -113,5 +113,5 @@ bool FormerWorlds::isEmpty() const {
 }
 
 FormerWorlds::FormerWorldsIterator FormerWorlds::getIterator() {
-    return FormerWorlds::FormerWorldsIterator(*this->newest);
+    return FormerWorlds::FormerWorldsIterator(this->newest);
 }
