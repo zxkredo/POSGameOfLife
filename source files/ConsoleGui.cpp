@@ -6,6 +6,7 @@
 #include <thread>
 #include <sstream>
 #include <windows.h>
+#include <random>
 #include "../headers/ConsoleGui.h"
 #include "../headers/ServerSaver.h"
 
@@ -292,11 +293,43 @@ void ConsoleGui::load_world_from_user() {
         std::cin >> userInput;
     }
     this->gameState.insert_current_world(loadedWorld);
+    this->forward_command();
 #undef message
 }
 
 void ConsoleGui::generate_random_starting_world() {
+    //TODO reused code from load_world_from_user, possible extraction to method
+    std::cout << "Zadajte pocet riadkov <1;50>:" << std::endl;
+    int rows = getNonZeroPositiveIntFromUser();
+    while(rows > 50) {
+        std::cout << "Zadajte pocet riadkov <1;50>:" << std::endl;
+        rows = getNonZeroPositiveIntFromUser();
+    }
 
+    std::cout << "Zadajte pocet stlpcov: <1;100>:" << std::endl;
+    int columns = getNonZeroPositiveIntFromUser();
+    while(columns > 100) {
+        std::cout << "Zadajte pocet riadkov <1;100>:" << std::endl;
+        columns = getNonZeroPositiveIntFromUser();
+    }
+
+    std::cout << "Zadajte pravdepodobnost zivota bunky na suradnici v percentách <1,100>:" << std::endl;
+    int livingProbability = getNonZeroPositiveIntFromUser();
+
+    std::random_device rd;  // a seed source for the random number engine
+    std::mt19937 gen(rd()); // mersenne_twister_engine seeded with rd()
+    std::uniform_int_distribution<> distrib(0, 99);
+
+    std::vector<std::vector<bool>> loadedWorld;
+    for (int i = 0; i < rows; ++i) {
+        loadedWorld.emplace_back();
+        for (int j = 0; j < columns; ++j) {
+            loadedWorld.back().push_back(distrib(gen) < livingProbability);
+        }
+    }
+    this->printWorldToConsole(loadedWorld);
+    this->gameState.insert_current_world(loadedWorld);
+    this->forward_command();
 }
 
 int ConsoleGui::getNonZeroPositiveIntFromUser() {
