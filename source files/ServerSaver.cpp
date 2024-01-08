@@ -7,7 +7,6 @@
 #include "../headers/my_socket.h"
 
 void ServerSaver::saveWorldToServer(const world_t& worldToSave, const std::string& fileName) {
-    MySocket* socket = MySocket::createConnection(HOSTNAME, PORT);
     std::stringstream dataToSend;
     dataToSend << "w" << fileName << ServerSaver::endRowChar;
     for (const auto &row : worldToSave) {
@@ -24,6 +23,7 @@ void ServerSaver::saveWorldToServer(const world_t& worldToSave, const std::strin
         }
         dataToSend << ServerSaver::endRowChar;
     }
+    MySocket* socket = MySocket::createConnection(HOSTNAME, PORT);
     socket->sendData(dataToSend.str());
     socket->sendEndMessage();
     delete socket;
