@@ -26,6 +26,7 @@ void ServerSaver::saveWorldToServer(const world_t& worldToSave, const std::strin
     }
     socket->sendData(dataToSend.str());
     socket->sendEndMessage();
+    delete socket;
 }
 
 bool ServerSaver::tryGetWorldFromServer(world_t& loadedWorld, const std::string& fileName) {
@@ -36,7 +37,7 @@ bool ServerSaver::tryGetWorldFromServer(world_t& loadedWorld, const std::string&
 
     std::string receivedData = socket->readData();
     socket->sendEndMessage();
-
+    delete socket;
     return ServerSaver::parseWorldFromServer(receivedData, loadedWorld);
 }
 
