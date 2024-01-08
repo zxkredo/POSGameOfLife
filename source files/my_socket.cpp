@@ -106,8 +106,11 @@ std::string MySocket::readData() {
                 r_buffer << buffer[i];
             }
         }
-        //wait for server to write something
-        std::this_thread::sleep_for(std::chrono::milliseconds(100));
+        //wait for server to write something, because we didn't receive terminate character yet
+        if (!terminateCharFound)
+        {
+            std::this_thread::sleep_for(std::chrono::milliseconds(100));
+        }
     }
     return r_buffer.str();
 }
