@@ -16,8 +16,8 @@ private:
     static const char falseCellChar = '.';
     static const char endRowChar = '\n';
 public:
-    static void saveWorldToServer(world_t worldToSave, std::string fileName);
-    static void getWorldFromServer(std::string fileName);
+    static void saveWorldToServer(const world_t& worldToSave, const std::string& fileName);
+    static void getWorldFromServer(const std::string& fileName);
 
 };
 

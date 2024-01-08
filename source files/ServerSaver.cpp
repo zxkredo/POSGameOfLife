@@ -6,7 +6,7 @@
 #include "../headers/ServerSaver.h"
 #include "../headers/my_socket.h"
 
-void ServerSaver::saveWorldToServer(world_t worldToSave, std::string fileName) {
+void ServerSaver::saveWorldToServer(const world_t& worldToSave, const std::string& fileName) {
     MySocket* socket = MySocket::createConnection("frios2.uniza.sk", 18235);
     std::stringstream dataToSend;
     dataToSend << "w" << fileName << ServerSaver::endRowChar;
@@ -28,5 +28,6 @@ void ServerSaver::saveWorldToServer(world_t worldToSave, std::string fileName) {
     socket->sendEndMessage();
 }
 
-void ServerSaver::getWorldFromServer(std::string fileName) {
+void ServerSaver::getWorldFromServer(const std::string& fileName) {
+
 }
