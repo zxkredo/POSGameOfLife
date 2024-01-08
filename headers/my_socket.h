@@ -10,6 +10,7 @@ public:
 
     ~MySocket();
     void sendData(const std::string& data);
+    std::string readData();
     void sendEndMessage();
 protected:
     MySocket(SOCKET socket);

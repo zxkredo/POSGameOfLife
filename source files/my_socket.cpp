@@ -2,6 +2,7 @@
 #include <stdexcept>
 #include <WS2tcpip.h>
 #include <WinSock2.h>
+#include <sstream>
 
 #define SOCKET_TERMINATE_CHAR '\0'
 
@@ -83,6 +84,26 @@ void MySocket::sendData(const std::string &data) {
     buffer = NULL;
 }
 
+std::string MySocket::readData() {
+    int recvbuflen = 5000;
+    char buffer[recvbuflen];
+    std::stringstream r_buffer;
+
+    int read_length = recv(connectSocket, buffer, recvbuflen, 0);
+    if (read_length > 0) {
+        size_t first_i = 0;
+        size_t last_i = 0;
+        while (last_i < read_length && buffer[last_i] != SOCKET_TERMINATE_CHAR) {
+            ++last_i;
+        }
+        size_t count = last_i - first_i;
+
+        for (int i = 0; i < count; ++i) {
+            r_buffer << buffer[first_i + i];
+        }
+    }
+    return r_buffer.str();
+}
 void MySocket::sendEndMessage() {
     this->sendData(this->endMessage);
 }
