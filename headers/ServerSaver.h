@@ -17,8 +17,10 @@ private:
     static const char endRowChar = '\n';
 public:
     static void saveWorldToServer(const world_t& worldToSave, const std::string& fileName);
-    static void getWorldFromServer(const std::string& fileName);
+    static bool tryGetWorldFromServer(world_t& loadedWorld, const std::string& fileName);
 
+private:
+    static bool parseWorldFromServer(std::string& receivedData, world_t& world);
 };
 
 

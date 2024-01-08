@@ -28,6 +28,46 @@ void ServerSaver::saveWorldToServer(const world_t& worldToSave, const std::strin
     socket->sendEndMessage();
 }
 
-void ServerSaver::getWorldFromServer(const std::string& fileName) {
+bool ServerSaver::tryGetWorldFromServer(world_t& loadedWorld, const std::string& fileName) {
+    MySocket* socket = MySocket::createConnection("frios2.uniza.sk", 18235);
+    std::stringstream dataToSend;
+    dataToSend << "r" << fileName << ServerSaver::endRowChar;
+    socket->sendData(dataToSend.str());
 
+    std::string receivedData = socket->readData();
+    socket->sendEndMessage();
+
+    return ServerSaver::parseWorldFromServer(receivedData, loadedWorld);
+}
+
+bool ServerSaver::parseWorldFromServer(std::string& receivedData, ServerSaver::world_t& world) {
+    if (receivedData == "\n")
+    {
+        return false;
+    }
+
+    world = world_t {};
+    world.emplace_back();
+    std::vector<bool>& row = world.back();
+    for (const char& character : receivedData)
+    {
+        if (character == ServerSaver::trueCellChar)
+        {
+            row.push_back(true);
+        }
+        else if (character == ServerSaver::falseCellChar)
+        {
+            row.push_back(false);
+        }
+        else if (character == ServerSaver::endRowChar)
+        {
+            world.emplace_back();
+            row = world.back();
+        }
+        else
+        {
+            return false;
+        }
+    }
+    return true;
 }
