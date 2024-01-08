@@ -248,12 +248,15 @@ void ConsoleGui::load_world_from_user() {
 
     std::cout << message << std::endl;
     std::string userInput;
-    std::cin >> userInput;
+
+    std::cin.ignore();
+    getline(std::cin,userInput);
+
     while (userInput != "hotovo")
     {
         std::stringstream ssUserInput(userInput);
-        int row = 0;
-        int column = 0;
+        int row = -1;
+        int column = -1;
         char mode = 0;
         ssUserInput >> row;
         ssUserInput >> column;
@@ -262,12 +265,12 @@ void ConsoleGui::load_world_from_user() {
         ssUserInput >> mode;
 
         bool fail = false;
-        if (row == 0 || row >= rows)
+        if (row < 0 || row > rows)
         {
             std::cout << "Zla suradnica riadku!" << std::endl;
             fail = true;
         }
-        if (column == 0 || column >= columns)
+        if (column < 0 || column > columns)
         {
             std::cout << "Zla suradnica stlpca!" << std::endl;
             fail = true;
@@ -290,7 +293,7 @@ void ConsoleGui::load_world_from_user() {
             printWorldToConsole(loadedWorld);
         }
         std::cout << message << std::endl;
-        std::cin >> userInput;
+        getline(std::cin,userInput);
     }
     this->gameState.insert_current_world(loadedWorld);
     this->forward_command();
