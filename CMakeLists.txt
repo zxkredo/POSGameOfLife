@@ -10,5 +10,7 @@ add_executable(POSGameOfLifeClient main.cpp "source files/my_socket.cpp"
         headers/ConsoleGui.h
         "source files/FormerWorlds.cpp"
         headers/FormerWorlds.h
+        "source files/ServerSaver.cpp"
+        headers/ServerSaver.h
 )
 target_link_libraries(POSGameOfLifeClient wsock32 ws2_32)
