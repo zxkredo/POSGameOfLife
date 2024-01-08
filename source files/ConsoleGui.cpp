@@ -39,8 +39,7 @@ void ConsoleGui::start() {
 }
 
 void ConsoleGui::printWorldToConsole(const world_t& world) {
-    SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), COORD{ 0, 0 } );
-    std::cout << std::endl << std::endl << std::endl;
+    ConsoleGui::clearConsole(world.size() + 10);
     for (const auto &row: world)
     {
         std::stringstream rowToPrint;
@@ -350,4 +349,15 @@ int ConsoleGui::getNonZeroPositiveIntFromUser() {
         ssUserInput >> number;
     }
     return number;
+}
+
+void ConsoleGui::clearConsole(unsigned long long rows)
+{
+    SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), COORD{ 0, 0 } );
+    //std::cout << "\033[1G"; // Move cursor to the beginning of the line
+    for (unsigned long long i = 0; i < rows; ++i) {
+        std::cout << "\033[500X"; // Erase 500 characters to the right of the cursor
+        std::cout << std::endl;
+    }
+    SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), COORD{ 0, 0 } );
 }

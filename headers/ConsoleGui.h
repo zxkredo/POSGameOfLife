@@ -46,6 +46,8 @@ private:
     void generate_random_starting_world();
 
     static int getNonZeroPositiveIntFromUser();
+
+    static void clearConsole(unsigned long long rows);
 };
 
 
