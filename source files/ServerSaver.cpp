@@ -25,6 +25,7 @@ void ServerSaver::saveWorldToServer(world_t worldToSave) {
         }
     }
     socket->sendData(dataToSend.str());
+    socket->sendEndMessage();
 }
 
 void ServerSaver::getWorldFromServer(std::string fileName) {
