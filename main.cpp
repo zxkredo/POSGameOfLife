@@ -1,5 +1,6 @@
 #include <iostream>
 #include <thread>
+#include <windows.h>
 #include "headers/GameState.h"
 #include "headers/ConsoleGui.h"
 
@@ -9,6 +10,8 @@ static void startCalculator(GameState& gameState)
 }
 
 int main() {
+    SetConsoleOutputCP(CP_UTF8);
+    SetConsoleCP(CP_UTF8);
     GameState gamestate;
 
     std::vector<std::thread*> threads;
