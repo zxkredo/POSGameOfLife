@@ -50,6 +50,7 @@ bool ServerSaver::parseWorldFromServer(std::string& receivedData, ServerSaver::w
     world = world_t {};
     world.emplace_back();
     std::vector<bool>* row = &world.back();
+    const char* lastCharacter = &receivedData.c_str()[receivedData.size()-1];
     for (const char& character : receivedData)
     {
         if (character == ServerSaver::trueCellChar)
@@ -62,8 +63,11 @@ bool ServerSaver::parseWorldFromServer(std::string& receivedData, ServerSaver::w
         }
         else if (character == ServerSaver::endRowChar)
         {
-            world.emplace_back();
-            row = &world.back();
+            if (&character != lastCharacter)
+            {
+                world.emplace_back();
+                row = &world.back();
+            }
         }
         else
         {
