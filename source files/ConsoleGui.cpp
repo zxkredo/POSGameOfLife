@@ -29,8 +29,6 @@ void ConsoleGui::start() {
         std::cin >> userInput;
     }
 
-    this->gameState.stop_simulation();
-
 }
 
 void ConsoleGui::printWorldToConsole(const world_t& world) {

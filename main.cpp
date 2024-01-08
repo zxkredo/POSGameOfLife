@@ -18,7 +18,7 @@ int main() {
 
     ConsoleGui gui(gamestate);
     gui.start();
-
+    gamestate.stop_simulation();
     for (auto & thread : threads) {
         thread->join();
         delete thread;
