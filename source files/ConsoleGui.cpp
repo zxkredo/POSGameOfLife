@@ -160,6 +160,7 @@ void ConsoleGui::backward_command() {
         std::cin >> userInput;
         while (userInput != "dopredu" && userInput !="dozadu" && userInput !="zaciatok")
         {
+            std::cout << "Zadajte dopredu, dozadu alebo zaciatok:" << std::endl;
             std::cin >> userInput;
         }
         if (userInput == "dopredu")
