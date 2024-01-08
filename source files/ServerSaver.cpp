@@ -21,8 +21,8 @@ void ServerSaver::saveWorldToServer(const world_t& worldToSave, const std::strin
             {
                 dataToSend << ServerSaver::falseCellChar;
             }
-            dataToSend << ServerSaver::endRowChar;
         }
+        dataToSend << ServerSaver::endRowChar;
     }
     socket->sendData(dataToSend.str());
     socket->sendEndMessage();
