@@ -124,21 +124,8 @@ void ConsoleGui::introduction() {
 
 void ConsoleGui::start_command() {
     std::cout << "Zadajte koľko krokov sa má generovať: " << std::endl;
+    int steps = getNonZeroPositiveIntFromUser();
 
-    std::string userInput;
-    std::cin >> userInput;
-
-    std::stringstream ssUserInput(userInput);
-    int steps = 0;
-    ssUserInput >> steps;
-
-    while (steps <= 0)
-    {
-        std::cout << "Zadajte číslo väčšie ako 0" << std::endl;
-        std::cin >> userInput;
-        ssUserInput = std::stringstream(userInput);
-        ssUserInput >> steps;
-    }
 
     for (int i = 0; i < steps; ++i) {
         this->forward_command();
@@ -244,4 +231,20 @@ void ConsoleGui::load_world_from_user() {
 
 void ConsoleGui::generate_random_starting_world() {
 
+}
+
+int ConsoleGui::getNonZeroPositiveIntFromUser() {
+    std::string userInput;
+    std::cin >> userInput;
+    std::stringstream ssUserInput(userInput);
+    int number = 0;
+    ssUserInput >> number;
+
+    while (number <= 0)
+    {
+        std::cout << "Zadajte číslo väčšie ako 0" << std::endl;
+        std::cin >> userInput;
+        ssUserInput = std::stringstream(userInput);
+        ssUserInput >> number;
+    }
 }

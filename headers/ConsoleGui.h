@@ -44,6 +44,8 @@ private:
     void load_world_from_user();
 
     void generate_random_starting_world();
+
+    static int getNonZeroPositiveIntFromUser();
 };
 
 
