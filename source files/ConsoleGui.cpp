@@ -346,4 +346,5 @@ int ConsoleGui::getNonZeroPositiveIntFromUser() {
         ssUserInput = std::stringstream(userInput);
         ssUserInput >> number;
     }
+    return number;
 }
