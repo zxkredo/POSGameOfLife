@@ -209,11 +209,33 @@ void ConsoleGui::load_command() {
 }
 
 void ConsoleGui::upload_command() {
-
+    std::cout << "Zadajte názov súboru:" << std::endl;
+    std::string userInput;
+    std::cin >> userInput;
+    try {
+        ServerSaver::saveWorldToServer(this->formerWorlds.getNewest(), userInput);
+    } catch(const std::exception& e)
+    {
+        std::cout << "Nastala chyba: " << e.what() << std::endl;
+    }
 }
 
 void ConsoleGui::download_command() {
-
+    std::cout << "Zadajte názov súboru:" << std::endl;
+    std::string userInput;
+    std::cin >> userInput;
+    try {
+        std::vector<std::vector<bool>> loadedWorld;
+        if (!ServerSaver::tryGetWorldFromServer(loadedWorld, userInput))
+        {
+            std::cout << "Zadaný svet:" << userInput << " na serveri neexistuje!" << std::endl;
+            return;
+        }
+        this->gameState.insert_current_world(loadedWorld);
+        this->forward_command();
+    } catch(const std::exception& e) {
+        std::cout << "Nastala chyba: " << e.what() << std::endl;
+    }
 }
 
 void ConsoleGui::load_world_from_user() {
