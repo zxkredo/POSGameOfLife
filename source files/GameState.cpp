@@ -4,15 +4,11 @@
 
 #include "../headers/GameState.h"
 
-GameState::GameState(unsigned int rows, unsigned int columns) : rows(rows), columns(columns), stopThreads(false), isGenerating(
-        false), alreadyCheckedCells(0), toBeCheckedRow(0), toBeCheckedColumn(0)
-        {
-    auto emptyWorld = std::vector(this->rows, std::vector<bool>(this->columns, false));
-    this->world1 = emptyWorld;
-    this->world2 = emptyWorld;
+GameState::GameState() : stopThreads(false), isGenerating(false), alreadyCheckedCells(0), toBeCheckedRow(0),
+    toBeCheckedColumn(0), world2(), world1(), rows(0), columns(0), cellCount(0)
+{
     this->currentWorld = &this->world2;
     this->futureWorld = &this->world1;
-    this->cellCount = this->rows * this->columns;
 }
 
 void GameState::start_generating_future_world() {
@@ -43,7 +39,13 @@ void GameState::insert_current_world(const std::vector<std::vector<bool>> &start
     while (this->isGenerating) {
         finishedGenerating.wait(lock);
     }
+
     *this->currentWorld = starting_world;
+    *this->futureWorld = starting_world;
+
+    this->rows = starting_world.size();
+    this->columns = this->rows == 0 ? 0 : this->currentWorld[0].size();
+    this->cellCount = this->rows * this->columns;
 }
 
 void GameState::start_checking_cells() {

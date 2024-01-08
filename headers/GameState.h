@@ -47,7 +47,7 @@ private:
 public:
     //contructor
     //Game world uses matrix coordinates top left is 0, 0 ; top right is 0, columns (number of columns)
-    GameState(unsigned int rows, unsigned int columns);
+    GameState();
 
     //controls
 

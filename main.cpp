@@ -9,7 +9,7 @@ static void startCalculator(GameState& gameState)
 }
 
 int main() {
-    GameState gamestate(10,100);
+    GameState gamestate;
 
     std::vector<std::thread*> threads;
     for (int i = 0; i < 4; ++i) {
