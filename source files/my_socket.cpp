@@ -87,7 +87,7 @@ void MySocket::sendData(const std::string &data) {
 }
 
 std::string MySocket::readData() {
-    #define BUFFLENGTH 5000
+    #define BUFFLENGTH 5200
     int recvbuflen = BUFFLENGTH;
     char buffer[BUFFLENGTH];
     std::stringstream r_buffer;
