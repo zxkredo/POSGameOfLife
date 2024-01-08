@@ -222,7 +222,77 @@ void ConsoleGui::download_command() {
 }
 
 void ConsoleGui::load_world_from_user() {
+    std::cout << "Zadajte pocet riadkov <1;50>:" << std::endl;
+    int rows = getNonZeroPositiveIntFromUser();
+    while(rows > 50) {
+        std::cout << "Zadajte pocet riadkov <1;50>:" << std::endl;
+        rows = getNonZeroPositiveIntFromUser();
+    }
 
+    std::cout << "Zadajte pocet stlpcov: <1;100>:" << std::endl;
+    int columns = getNonZeroPositiveIntFromUser();
+    while(columns > 100) {
+        std::cout << "Zadajte pocet riadkov <1;100>:" << std::endl;
+        columns = getNonZeroPositiveIntFromUser();
+    }
+    std::vector<std::vector<bool>> loadedWorld;
+    for (int i = 0; i < rows; ++i) {
+        loadedWorld.emplace_back();
+        for (int j = 0; j < columns; ++j) {
+            loadedWorld.back().push_back(false);
+        }
+    }
+    this->printWorldToConsole(loadedWorld);
+#define message R"(Zadajte "hotovo" alebo suradnice zivej bunky vo formate: "0 0 [m]", m je volitene a znamena mrtve.:)"
+
+    std::cout << message << std::endl;
+    std::string userInput;
+    std::cin >> userInput;
+    while (userInput != "hotovo")
+    {
+        std::stringstream ssUserInput(userInput);
+        int row = 0;
+        int column = 0;
+        char mode = 0;
+        ssUserInput >> row;
+        ssUserInput >> column;
+
+        //fist take out empty space then the char
+        ssUserInput >> mode;
+
+        bool fail = false;
+        if (row == 0 || row >= rows)
+        {
+            std::cout << "Zla suradnica riadku!" << std::endl;
+            fail = true;
+        }
+        if (column == 0 || column >= columns)
+        {
+            std::cout << "Zla suradnica stlpca!" << std::endl;
+            fail = true;
+        }
+        if (mode != 0 && mode != 'm')
+        {
+            std::cout << "Posledny parameter môže byť jedine m alebo nič!" << std::endl;
+            fail = true;
+        }
+        if (!fail)
+        {
+            if (mode == 0)
+            {
+                loadedWorld.at(row).at(column) = true;
+            }
+            else
+            {
+                loadedWorld.at(row).at(column) = false;
+            }
+            printWorldToConsole(loadedWorld);
+        }
+        std::cout << message << std::endl;
+        std::cin >> userInput;
+    }
+    this->gameState.insert_current_world(loadedWorld);
+#undef message
 }
 
 void ConsoleGui::generate_random_starting_world() {
