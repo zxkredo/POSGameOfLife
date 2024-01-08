@@ -44,7 +44,7 @@ void GameState::insert_current_world(const std::vector<std::vector<bool>> &start
     *this->futureWorld = starting_world;
 
     this->rows = starting_world.size();
-    this->columns = this->rows == 0 ? 0 : this->currentWorld[0].size();
+    this->columns = this->rows == 0 ? 0 : this->currentWorld->at(0).size();
     this->cellCount = this->rows * this->columns;
 }
 
