@@ -98,11 +98,11 @@ void ConsoleGui::parseUserInput(const std::string& userInput) {
 }
 
 void ConsoleGui::introduction() {
-    std::cout << "Zadajte, či chcete vygenerovať náhodný vzor (n), zadať ručne(z) alebo zo suboru(f) :" << std::endl;
+    std::cout << "Zadajte, či chcete vygenerovať náhodný vzor (n), zadať ručne(z):" << std::endl;
 
     std::string userInput;
     std::cin >> userInput;
-    while (userInput != "z" && userInput != "n" && userInput != "f")
+    while (userInput != "z" && userInput != "n")
     {
         std::cout << "Zadajte vhodny prikaz: " << std::endl;
         std::cin >> userInput;
@@ -111,10 +111,6 @@ void ConsoleGui::introduction() {
     if (userInput == "z")
     {
         this->load_world_from_user();
-    }
-    else if (userInput == "f")
-    {
-        this->load_command();
     }
     else
     {
