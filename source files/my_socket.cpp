@@ -3,6 +3,8 @@
 #include <WS2tcpip.h>
 #include <WinSock2.h>
 #include <sstream>
+#include <chrono>
+#include <thread>
 
 #define SOCKET_TERMINATE_CHAR '\0'
 
@@ -89,18 +91,23 @@ std::string MySocket::readData() {
     char buffer[recvbuflen];
     std::stringstream r_buffer;
 
-    int read_length = recv(connectSocket, buffer, recvbuflen, 0);
-    if (read_length > 0) {
-        size_t first_i = 0;
-        size_t last_i = 0;
-        while (last_i < read_length && buffer[last_i] != SOCKET_TERMINATE_CHAR) {
-            ++last_i;
-        }
-        size_t count = last_i - first_i;
+    bool terminateCharFound = false;
+    while (!terminateCharFound)
+    {
+        int read_length = recv(connectSocket, buffer, recvbuflen, 0);
+        if (read_length > 0) {
 
-        for (int i = 0; i < count; ++i) {
-            r_buffer << buffer[first_i + i];
+            for (int i = 0; i < read_length; ++i) {
+                if (buffer[i] == SOCKET_TERMINATE_CHAR)
+                {
+                    terminateCharFound = true;
+                    break;
+                }
+                r_buffer << buffer[i];
+            }
         }
+        //wait for server to write something
+        std::this_thread::sleep_for(std::chrono::milliseconds(100));
     }
     return r_buffer.str();
 }
