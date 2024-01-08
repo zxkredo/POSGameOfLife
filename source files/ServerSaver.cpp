@@ -48,21 +48,21 @@ bool ServerSaver::parseWorldFromServer(std::string& receivedData, ServerSaver::w
 
     world = world_t {};
     world.emplace_back();
-    std::vector<bool>& row = world.back();
+    std::vector<bool>* row = &world.back();
     for (const char& character : receivedData)
     {
         if (character == ServerSaver::trueCellChar)
         {
-            row.push_back(true);
+            row->push_back(true);
         }
         else if (character == ServerSaver::falseCellChar)
         {
-            row.push_back(false);
+            row->push_back(false);
         }
         else if (character == ServerSaver::endRowChar)
         {
             world.emplace_back();
-            row = world.back();
+            row = &world.back();
         }
         else
         {
