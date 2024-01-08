@@ -177,7 +177,10 @@ void ConsoleGui::backward_command() {
             {
                 std::cout << "Ste na konci historie." << std::endl;
             }
-            this->printWorldToConsole(history.getCurrent());
+            else
+            {
+                this->printWorldToConsole(history.getCurrent());
+            }
         }
         else
         {
