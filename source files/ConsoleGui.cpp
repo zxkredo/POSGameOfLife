@@ -39,7 +39,7 @@ void ConsoleGui::start() {
 }
 
 void ConsoleGui::printWorldToConsole(const world_t& world) {
-    ConsoleGui::clearConsole(world.size() + 10);
+    ConsoleGui::clearConsole(world.size() + 50);
     for (const auto &row: world)
     {
         std::stringstream rowToPrint;
