@@ -9,6 +9,9 @@
 #include <vector>
 #include <string>
 
+#define HOSTNAME "frios2.fri.uniza.sk"
+#define PORT 18235
+
 class ServerSaver {
     typedef std::vector<std::vector<bool>> world_t;
 private:
