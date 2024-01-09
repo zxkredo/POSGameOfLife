@@ -9,9 +9,26 @@ static void startCalculator(GameState& gameState)
     gameState.start_checking_cells();
 }
 
+//code from CHATGPT
+void enableANSI() {
+    HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE);
+    DWORD dwMode = 0;
+
+    // Get the current console mode
+    GetConsoleMode(hOut, &dwMode);
+
+    // Enable virtual terminal processing in the console mode
+    dwMode |= ENABLE_VIRTUAL_TERMINAL_PROCESSING;
+
+    // Set the modified console mode
+    SetConsoleMode(hOut, dwMode);
+}
+
 int main() {
     SetConsoleOutputCP(CP_UTF8);
     SetConsoleCP(CP_UTF8);
+    // Enable ANSI escape codes
+    enableANSI();
     GameState gamestate;
 
     std::vector<std::thread*> threads;
