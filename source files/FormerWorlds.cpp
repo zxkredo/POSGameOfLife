@@ -99,6 +99,10 @@ void FormerWorlds::add(const std::vector<std::vector<bool>> &data) {
 
             this->oldest = secondToLastBlock;
         }
+        else
+        {
+            blockCount++;
+        }
 
         auto newBlock = new FormerWorlds::FormerWorldsBlock(data, nullptr, this->newest);
         this->newest->setNext(newBlock);
